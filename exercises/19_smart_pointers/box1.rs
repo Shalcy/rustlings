@@ -18,12 +18,12 @@ enum List {
 
 // TODO: Create an empty cons list.
 fn create_empty_list() -> List {
-    todo!()
+    List::Nil
 }
 
 // TODO: Create a non-empty cons list.
 fn create_non_empty_list() -> List {
-    todo!()
+    List::Cons(42, Box::new(List::Nil))
 }
 
 fn main() {

@@ -1,9 +1,9 @@
-fn fill_vec(vec: Vec<i32>) -> Vec<i32> {
+fn fill_vec(vec: &mut Vec<i32>) -> Vec<i32> {
     let mut vec = vec;
 
     vec.push(88);
 
-    vec
+    vec.clone();
 }
 
 fn main() {
@@ -18,7 +18,7 @@ mod tests {
     // fix the compiler error in the test.
     #[test]
     fn move_semantics2() {
-        let vec0 = vec![22, 44, 66];
+        let mut vec0 = vec![22, 44, 66];
 
         let vec1 = fill_vec(vec0);
 
