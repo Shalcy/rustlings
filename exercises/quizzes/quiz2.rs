@@ -9,7 +9,7 @@
 // - The input is going to be a vector of 2-length tuples,
 //   the first element is the string, the second one is the command.
 // - The output element is going to be a vector of strings.
-
+// TODO
 enum Command {
     Uppercase,
     Trim,
