@@ -1,15 +1,14 @@
 #![allow(clippy::ptr_arg)]
 
-// TODO: Fix the compiler errors without changing anything except adding or
-// removing references (the character `&`).
-
-// Shouldn't take ownership
-fn get_char(data: String) -> char {
+// Borrows instead of taking ownership.
+// It is recommended to use `&str` instead of `&String` here. But this is
+// enough for now because we didn't handle strings yet.
+fn get_char(data: &String) -> char {
     data.chars().last().unwrap()
 }
 
-// Should take ownership
-fn string_uppercase(data: String) {
+// Takes ownership instead of borrowing.
+fn string_uppercase(mut data: String) {
     data = data.to_uppercase();
 
     println!("{data}");
@@ -18,7 +17,7 @@ fn string_uppercase(data: String) {
 fn main() {
     let data = "Rust is great!".to_string();
 
-    get_char(data);
+    get_char(&data);
 
     string_uppercase(data);
 }

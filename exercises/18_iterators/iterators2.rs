@@ -7,7 +7,7 @@ fn capitalize_first(input: &str) -> String {
     let mut chars = input.chars();
     match chars.next() {
         None => String::new(),
-        Some(first) => => {
+        Some(first) => {
             // Capitalize the first character and concatenate with the rest of the string
             first.to_uppercase().to_string() + chars.as_str()
         }
